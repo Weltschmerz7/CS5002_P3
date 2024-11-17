@@ -1,0 +1,15 @@
+{
+    "RESIDENCE_TYPE": {
+        "C": "Resident in a Communal Establishment",
+        "P": "Not resident in a Communal Establishment"
+    },
+    "Family_Composition": {
+        "0": "Not in a family",
+        "1": "Married/same-sex civil partnership couple family",
+        "2": "Cohabiting couple family",
+        "3": "Lone parent family (male head)",
+        "4": "Lone parent family (female lead)",
+        "5": "Other related family",
+        "X": "No code required (residents of a communal establishment)"
+    }
+}
