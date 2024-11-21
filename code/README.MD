@@ -6,4 +6,4 @@ To activate an virtual environment: source venv/bin/activate
 
 Download all required packages: pip install -r requirements.txt
 
-To add the git log into gitlog.txt: **git log >> gitlog.txt**
+To add the git log into gitlog.txt: **git log >> gitlog.txt** 
