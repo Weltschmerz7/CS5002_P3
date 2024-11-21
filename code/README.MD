@@ -5,3 +5,5 @@ To create an virtual environment: python -m venv <your_virtual_environment_name>
 To activate an virtual environment: source venv/bin/activate
 
 Download all required packages: pip install -r requirements.txt
+
+To add the git log into gitlog.txt: **git log >> gitlog.txt**
