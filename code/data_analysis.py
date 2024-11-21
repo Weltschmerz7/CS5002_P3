@@ -1,11 +1,33 @@
 import pandas as pd
 import json as jn
-import numpy as np
 
-# read the csv
-teaching_data = pd.read_csv('data/Scotland_teaching_file_1PCT.csv')
 
-# get the labels to distinguish between numerical sumbols 
-with open ('data/data_dictionary.json', 'r') as f:
-    labels = jn.load(f)
+def map_data (data):
+    '''This function maps the numeric data in the csv file and gives the context provided in the JSON file'''
+    # Read the csv file in the data folder
+    csv_data = pd.read_csv('data/Scotland_teaching_file_1PCT.csv', 'r')
+
+    # load the data from the data_dictionary.json file
+    with open ('data/data_dictionary.json', 'r') as f:
+        map = jn.load(f)
+    
+    # apply the logic to map the context to each encoded number
+    for col, col_map in map.items():
+        # check if the column exist in the csv data's colum
+        if col in csv_data.columns:
+            csv_data[col] = csv_data[col].map(col_map).fillna('Unknown')
+
+    # save the mapped data in another csv file
+    data.to_csv('cleaned_data.csv', indext = False)
+
+    return data
+
+    
+
+
+
+    
+
+
+
 
