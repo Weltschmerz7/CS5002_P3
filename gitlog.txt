@@ -176,3 +176,56 @@ Author: ye ziying <yziying8@gmail.com>
 Date:   Sun Nov 17 21:14:21 2024 +0000
 
     initial commit
+commit 2238225ba023c4a8b5b819170b595bed2167fbee
+Author: ye ziying <yziying8@gmail.com>
+Date:   Thu Nov 21 21:50:43 2024 +0000
+
+    add a new python file to store the code to analyze data
+
+commit 6ee00ece4cfc34f25cee48b9ba3de33fede07c15
+Author: ye ziying <yziying8@gmail.com>
+Date:   Thu Nov 21 21:48:22 2024 +0000
+
+    update: wrote the function to map the context to the numeric values
+
+commit 828cfaf8c0ea7cfac442f471133ed3a43a03ee44
+Author: ye ziying <yziying8@gmail.com>
+Date:   Thu Nov 21 18:21:44 2024 +0000
+
+    update: general updates
+
+commit 5dfac8408babdf68612f0752fc6107d093453911
+Author: ye ziying <yziying8@gmail.com>
+Date:   Thu Nov 21 18:19:09 2024 +0000
+
+    update: general updates
+
+commit 3888638964af251fa9c522924fd3a6e1613ce608
+Author: ye ziying <yziying8@gmail.com>
+Date:   Thu Nov 21 17:58:03 2024 +0000
+
+    update: general update
+
+commit 0f5cee347bcf458a26b30aead0dcabc766b153f4
+Author: ye ziying <yziying8@gmail.com>
+Date:   Thu Nov 21 12:46:00 2024 +0000
+
+    set up workstation
+
+commit ab0aa81f02cbd8265a9e25f48e7bc13c18ee1cb6
+Author: ye ziying <yziying8@gmail.com>
+Date:   Sun Nov 17 22:23:05 2024 +0000
+
+    save the folder for code
+
+commit d40967a0210cc7e48eb59da2d387088a5e65d149
+Author: ye ziying <yziying8@gmail.com>
+Date:   Sun Nov 17 21:58:43 2024 +0000
+
+    get the data from zip
+
+commit afdfa79d7e62c8c430dff6dd7c3d29f700d9de9a
+Author: ye ziying <yziying8@gmail.com>
+Date:   Sun Nov 17 21:14:21 2024 +0000
+
+    initial commit
