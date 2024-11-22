@@ -1,3 +1,4 @@
+* 7f27159 updated how gitlog should be formatted
 * 913f136 modified the format of gitlog
 * 21f0564 general update
 * a811d05 general update
