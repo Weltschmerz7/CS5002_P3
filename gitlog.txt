@@ -1,3 +1,4 @@
+* 913f136 modified the format of gitlog
 * 21f0564 general update
 * a811d05 general update
 * 8af822b gitlog.txt is updated with the latest commit history
