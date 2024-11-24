@@ -1,3 +1,4 @@
+* 4ab6955 delete git.log.txt
 * 7f27159 updated how gitlog should be formatted
 * 913f136 modified the format of gitlog
 * 21f0564 general update
