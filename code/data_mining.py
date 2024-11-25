@@ -1,7 +1,10 @@
 import pandas as pd
 import json as jn
 
-
+# Pseudo code: This script should automate the data mining process with the following steps
+# check the format and validity of variable values
+# remove duplicates and deal with missing values
+# save the refined dataset as a seperate csv in data subdirectory for subsequent analysis
 
 def clean_data ():
     '''This function checks for consistency and clean the data'''

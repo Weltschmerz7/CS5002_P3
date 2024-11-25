@@ -1,3 +1,6 @@
+* 24c5cd6 add rsc folder to store images
+* 0de94df add notebook and xlsx
+* 8c10b17 transfer function from data_mining.py to data_analysis.py
 * 4ab6955 delete git.log.txt
 * 7f27159 updated how gitlog should be formatted
 * 913f136 modified the format of gitlog
