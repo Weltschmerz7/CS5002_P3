@@ -1,3 +1,4 @@
+* 33186fd modify data_mining and jupyter notebook
 * 24c5cd6 add rsc folder to store images
 * 0de94df add notebook and xlsx
 * 8c10b17 transfer function from data_mining.py to data_analysis.py
