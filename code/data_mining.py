@@ -1,3 +1,4 @@
+#! user/bin/env python3
 import pandas as pd
 import json as jn
 
@@ -37,13 +38,19 @@ def clean_data ():
             invalid_rows = pd.concat([invalid_rows, invalid_row], ignore_index=True)
             # use ~ to select all the rows that computed the 'True' boolean
             data = data[~invalid_mask]
-    data.to_csv('data/cleaned_data.csv', index=False)
-    invalid_rows.to_csv('data/invalid_data.csv', index=False)
-    print(f'Data cleaned, stored {len(invalid_rows)} records of invalid data in a seperate csv file. Cleaned data is ready to be processed!')
-            
+
+    # only create extra files if the data needs cleaning
+    if len(invalid_rows) != 0:
+        data.to_csv('data/cleaned_data.csv', index=False)
+        invalid_rows.to_csv('data/invalid_data.csv', index=False)
+        print(f'Data cleaned, stored {len(invalid_rows)} records of invalid data in a seperate csv file. Cleaned data is ready to be processed!')
+    else:
+        print('the raw data is clean and no further processing needed!')
+
+if __name__ == '__main__':
+    clean_data()
 
 
-clean_data()
 
 
 

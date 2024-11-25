@@ -1,3 +1,4 @@
+* aabc9d7 complete data cleaning function
 * 33186fd modify data_mining and jupyter notebook
 * 24c5cd6 add rsc folder to store images
 * 0de94df add notebook and xlsx
