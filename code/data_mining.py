@@ -1,6 +1,7 @@
-#! user/bin/env python3
+#!/usr/bin/env python3 
 import pandas as pd
 import json as jn
+
 
 # Pseudo code: This script should automate the data mining process with the following steps
 # check the format and validity of variable values
@@ -49,8 +50,12 @@ def clean_data ():
     else:
         print('the raw data is clean and no further processing needed!')
 
+# make the script executable and provide correct usage if wrong arguments were used
 if __name__ == '__main__':
-    clean_data()
+        clean_data()
+
+
+
 
 
 

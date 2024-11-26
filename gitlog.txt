@@ -1,3 +1,4 @@
+* 97801cb finish data_mining.py
 * c491f19 make data_mining.py executable
 * aabc9d7 complete data cleaning function
 * 33186fd modify data_mining and jupyter notebook

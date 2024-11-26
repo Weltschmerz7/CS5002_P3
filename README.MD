@@ -16,5 +16,10 @@ I have also added a post-commit file in .git/hooks to automatically update the g
 
 To clear the gitlog.txt: **> gitlog.txt** to overwrite the file with nothing
 
-First run the **data_mining.py** in the terminal to clean the data and verify that the data is of correct format.
+First run the **data_mining.py** in the terminal to clean the data and verify that the data is of correct format. Run it using `'./code/data_mining.py'`
+if the data is inconsistent, a new csv file will be saved under 'data' folder
+if the data is consistent, no new csv will be made and a message will be printed in terminal
+
+
+
 
