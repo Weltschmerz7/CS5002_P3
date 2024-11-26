@@ -11,8 +11,6 @@ def clean_data ():
     '''This function checks for consistency and clean the data'''
     # hardcode the file in because this is the assigned file to read
     data = pd.read_csv('data/Scotland_teaching_file_1PCT.csv')
-    # This drops the duplication and fill the missing values with 'Unknown'
-    data = data.drop_duplicates().fillna('NaN')
 
     # load the json file
     with open('data/data_dictionary.json', 'r') as f:
@@ -20,7 +18,11 @@ def clean_data ():
         # the key for the outer dictionary is each column header
         # the key for inner dictionary is each code 
         valid_rules = jn.load(f)
-    
+    # check if there are any duplications, if there is, drop them and put cleaned csv in seperate file
+    duplicates = data[data.duplicated()]
+    if not duplicates.empty:
+        print(f'Duplication of {len(duplicates)} records found, dropping duplication and saving a seperate cleaned csv file..')
+        data = data.drop_duplicates().fillna('NaN')
     # initialize an empty dataframe to store all invalid rows that don't match the json rules
     invalid_rows = pd.DataFrame(columns = data.columns)
     for column in data.columns:
@@ -40,7 +42,7 @@ def clean_data ():
             data = data[~invalid_mask]
 
     # only create extra files if the data needs cleaning
-    if len(invalid_rows) != 0:
+    if len(invalid_rows) != 0 or len(duplicates) != 0:
         data.to_csv('data/cleaned_data.csv', index=False)
         invalid_rows.to_csv('data/invalid_data.csv', index=False)
         print(f'Data cleaned, stored {len(invalid_rows)} records of invalid data in a seperate csv file. Cleaned data is ready to be processed!')
