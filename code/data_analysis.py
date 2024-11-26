@@ -14,3 +14,4 @@ def map_data (df_to_map):
             df_to_map[col] = df_to_map[col].map(col_map).fillna('Unknown')
 
     return df_to_map
+
