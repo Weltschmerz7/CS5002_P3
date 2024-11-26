@@ -1,3 +1,4 @@
+* fb28b3e make the data_mining.py executable and move readme file outside of folder
 * 97801cb finish data_mining.py
 * c491f19 make data_mining.py executable
 * aabc9d7 complete data cleaning function
