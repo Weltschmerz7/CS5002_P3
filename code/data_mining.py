@@ -19,9 +19,12 @@ def clean_data ():
         # the key for inner dictionary is each code 
         valid_rules = jn.load(f)
     
+    # make the original_columns to a list to compare with the potentially modified columns
+    original_columns = data.columns.to_list()
     # turn the column names in csv and json file to lower case to help with consistency
     valid_rules = {k.lower(): v for k, v in valid_rules.items()}
     data.columns = data.columns.str.strip().str.lower()
+   
     # check if there are any duplications, if there is, drop them and put cleaned csv in seperate file
     duplicates = data[data.duplicated()]
     if not duplicates.empty:
@@ -59,6 +62,9 @@ def clean_data ():
         data.to_csv('data/cleaned_data.csv', index=False)
         invalid_rows.to_csv('data/invalid_data.csv', index=False)
         print(f'Data cleaned, stored {len(invalid_rows)} records of invalid data in a seperate csv file. Cleaned data is ready to be processed!')
+    elif original_columns != list(data.columns):
+        data.to_csv('data/cleaned_data.csv', index=False)
+        print('Data columns have been cleaned and new csv file is saved in the data directory!')
     else:
         print('the raw data is clean and no further processing needed!')
     return data, invalid_rows

@@ -31,7 +31,7 @@ def analyze_csv (csv_data):
         if column not in excluded_columns:
             value_count[column] = data[column].value_counts().to_dict()
     results['value_counts'] = value_count
-    # Requirement 4: get the number of records for each age group, output a list
+    # Requirement 4: get the number of records for each age group
     results['age_count'] = data['age'].value_counts().to_dict()
     # Requirement 5: get the number of records for each occupation
     results["occupation_counts"] = data["Occupation"].value_counts().to_dict()

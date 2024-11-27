@@ -20,7 +20,11 @@ I have set up `.gitignore` to let git ignore certain unecessary files when pushi
 
 First run the **data_mining.py** in the terminal to clean the data and verify that the data is of correct format. Run it using `'./code/data_mining.py'`
 if the data is inconsistent, a new csv file will be saved under 'data' folder
-if the data is consistent, no new csv will be made and a message will be printed in terminal
+if the data is consistent, no new csv will be made and a message will be printed in terminal. All columns' names will be put into lower case and striped off white space
+
+After running the data_mining.py, go to the jupyter lab and run to see the analyzed results and plotted graphs and charts.
+
+
 
 
 
