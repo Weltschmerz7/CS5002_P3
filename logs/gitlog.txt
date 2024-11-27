@@ -1,3 +1,4 @@
+* db58d39 set up data analysis function
 * a413a4a finalize data_mining.py
 * dd9f224 re-organize project structure
 * fb28b3e make the data_mining.py executable and move readme file outside of folder

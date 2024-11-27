@@ -18,6 +18,10 @@ def clean_data ():
         # the key for the outer dictionary is each column header
         # the key for inner dictionary is each code 
         valid_rules = jn.load(f)
+    
+    # turn the column names in csv and json file to lower case to help with consistency
+    valid_rules = {k.lower(): v for k, v in valid_rules}
+    data.columns = data.columns.str.strip().str.lower()
     # check if there are any duplications, if there is, drop them and put cleaned csv in seperate file
     duplicates = data[data.duplicated()]
     if not duplicates.empty:
@@ -51,7 +55,7 @@ def clean_data ():
             data[column] = pd.Categorical(data[column], categories=list(valid_set), ordered=False)
             
     # only create extra files if the data needs cleaning
-    if len(invalid_rows) != 0 or len(duplicates) != 0:
+    if len(invalid_rows) != 0 or len(duplicates) != 0 or len(nan_count) != 0:
         data.to_csv('data/cleaned_data.csv', index=False)
         invalid_rows.to_csv('data/invalid_data.csv', index=False)
         print(f'Data cleaned, stored {len(invalid_rows)} records of invalid data in a seperate csv file. Cleaned data is ready to be processed!')
