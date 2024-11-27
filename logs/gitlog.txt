@@ -1,3 +1,4 @@
+* c8aef5d modify column names data_analysis.py
 * c67c77a add data_visualization.py module
 * 930e0f3 add cleaned data to help with subsequent analysis
 * c91e5eb finalized data_mining.py

@@ -1,3 +1,4 @@
+#!/usr/bin/env python3 
 import pandas as pd
 import json as jn
 
@@ -37,29 +38,26 @@ def analyze_csv (csv_data):
     results['occupation_counts'] = data['occupation'].value_counts().to_dict()
     # Requirement 6: get the percentage of records for each general health descripter
     health_counts = data['health'].value_counts(normalize=True) * 100
-    results['health_percentages'] = health_counts.to_dict()
+    results['health_percentages'] = health_counts.round(2).to_dict()
     # Requirement 7: get the percentage of records of each ethnic group
     ethnic_group_counts = data['ethnic_group'].value_counts(normalize=True) * 100
-    results['ethnic_group_percentages'] = ethnic_group_counts.to_dict()
+    results['ethnic_group_percentages'] = ethnic_group_counts.round(2).to_dict()
     # Requirement 8: get the number of records by hours worked per week and industry
-    results['hours_worked_by_industry'] = (
-            data.groupby(['hours_worked_per_week', 'industry']).size().to_dict()
-        )
+    results['hours_worked_by_industry'] = (data.groupby(['hours_worked_per_week', 'industry']).size().to_dict())
     # Requirement 9: get the number of records by occupation and approximate social grade
-    results['occupation_by_social_grade'] = (
-            data.groupby(['occupation', 'approximate_social_grade']).size().to_dict()
-        )
+    results['occupation_by_social_grade'] = (data.groupby(['occupation', 'approximate_social_grade']).size().to_dict())
     # Requirement 10: get the number of economically active people depending on age
     active_codes = ['1', '2', '3', '4']  # economically active codes
-    active_data = data[data['economic_activity'].isin(active_codes)]
-    results['economically_active_by_age'] = active_data['age'].value_counts().to_dict()
+    results['economically_active_by_age'] = (data.loc[data['economic_activity'].isin(active_codes)].groupby('age').size().to_dict())
     # Requirement 11: get the number of economically inactive people depending on a health descriptor
     inactive_codes = ['5', '6', '7', '8', '9']  # economically inactive codes
-    inactive_data = data[data['economic_activity'].isin(inactive_codes)]
-    results['economically_inactive_by_health'] = inactive_data['health'].value_counts().to_dict()
+    results['economically_inactive_by_health'] = (data.loc[data['economic_activity'].isin(inactive_codes)].groupby('health').size().to_dict())
     # Requirement 12: get the number of working hours per week for students
     student_codes = ['4', '6']  # full-time and part-time student codes
-    student_data = data[data['economic_activity'].isin(student_codes)]
-    results['working_hours_for_students'] = student_data['hours_worked_per_week'].value_counts().to_dict()
-
+    results['working_hours_for_students'] = (data.loc[data['economic_activity'].isin(student_codes)].groupby('hours_worked_per_week').size().to_dict())
+    print(results)
     return results
+
+# make the script executable 
+if __name__ == '__main__':
+        analyze_csv('data/cleaned_data.csv')

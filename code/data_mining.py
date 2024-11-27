@@ -54,8 +54,8 @@ def clean_data ():
             invalid_rows = pd.concat([invalid_rows, invalid_row], ignore_index=True)
             # drop all the invalid columns
             data = data[~invalid_mask]    
-            # convert all the columns in csv to categorical type with predefined categories
-            data[column] = pd.Categorical(data[column], categories=list(valid_set), ordered=False)
+            # # convert all the columns in csv to categorical type with predefined categories
+            # data[column] = pd.Categorical(data[column], categories=list(valid_set), ordered=False)
             
     # only create extra files if the data needs cleaning
     if len(invalid_rows) != 0 or len(duplicates) != 0 or nan_count > 0:
@@ -69,6 +69,6 @@ def clean_data ():
         print('the raw data is clean and no further processing needed!')
     return data, invalid_rows
 
-# make the script executable and provide correct usage if wrong arguments were used
+# make the script executable 
 if __name__ == '__main__':
         clean_data()
