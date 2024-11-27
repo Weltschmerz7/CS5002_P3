@@ -31,7 +31,7 @@ def clean_data ():
             # check if there is any missing data in the column
             nan_count = data[column].isnull().sum()
             if nan_count > 0:
-                print(f'column "{column}" has {nan_count} missing data, filling with placeholder "Unknown"')
+                print(f'column "{column}" has {nan_count} missing data, filling with placeholder "NaN"')
                 #  fill the missing values with a place holder
                 data[column] = data[column].fillna('NaN')
             # convert all series into string to aid comparison, in this context, it does not matter if the csv codes are string numbers
@@ -63,8 +63,3 @@ def clean_data ():
 # make the script executable and provide correct usage if wrong arguments were used
 if __name__ == '__main__':
         clean_data()
-
-
-
-
-

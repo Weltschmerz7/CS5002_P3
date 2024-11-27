@@ -1,3 +1,4 @@
+* a413a4a finalize data_mining.py
 * dd9f224 re-organize project structure
 * fb28b3e make the data_mining.py executable and move readme file outside of folder
 * 97801cb finish data_mining.py
