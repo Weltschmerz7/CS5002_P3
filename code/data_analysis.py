@@ -67,6 +67,21 @@ def analyze_csv (csv_data):
     results['working_hours_for_students'] = (data.loc[data['economic_activity'].isin(student_codes)].groupby('hours_worked_per_week').size().to_dict())
     # print(f'one of the result dictionary! : {results["age_count"]}')
     print(results)
+
+    result_types = {}
+    result_types["hours_worked_by_industry"] = ["Industry", "Hours_Worked"]
+    
+    for k in results["hours_worked_by_industry"]:
+        # result_types[0] = "Industry"
+        # json[result_types[0]] = json["Industry"] = industry_dict
+        # k[0] = 1
+        # k[1] = 12
+        # json["Industry"][k[0]] = "Agricuyklteer"... 
+        
+        map[result_types[0]][k[0]]
+
+        
+    
     return results
 
 # make the script executable 

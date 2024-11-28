@@ -1,7 +1,8 @@
 {
     "RESIDENCE_TYPE": {
         "C": "Resident in a Communal Establishment",
-        "P": "Not resident in a Communal Establishment"
+        "P": "Not resident in a Communal Establishment",
+        "NaN": "NaN"
     },
     "Family_Composition": {
         "0": "Not in a family",
@@ -10,11 +11,13 @@
         "3": "Lone parent family (male head)",
         "4": "Lone parent family (female lead)",
         "5": "Other related family",
-        "X": "No code required (residents of a communal establishment)"
+        "X": "No code required (residents of a communal establishment)",
+        "NaN": "NaN"
     },
     "sex": {
         "1": "Male",
-        "2": "Female"
+        "2": "Female",
+        "NaN": "NaN"
     },
     "age": {
         "1": "0 to 15",
@@ -24,29 +27,35 @@
         "5": "45 to 54",
         "6": "55 to 64",
         "7": "65 to 74",
-        "8": "75 and over" 
+        "8": "75 and over",
+        "NaN": "NaN"
     },
     "Marital_Status": {
         "1": "Single (Never married or never registered a same-sex civil partnership",
         "2": "Married or in a same sex-civil partnership",
         "3": "Separated, but still legally married or still legally in a same-sex civil partnership",
         "4": "Divorced or formerly in a same-sex civil partnership which is now legally dissolved",
-        "5": "Widowed or surviving partner from a same-sex civil partnership"
+        "5": "Widowed or surviving partner from a same-sex civil partnership",
+        "NaN": "NaN"
+
     },
     "student": {
         "1": "Yes",
-        "2": "No"
+        "2": "No",
+        "NaN": "NaN"
     },
     "Country_Of_Birth": {
         "1": "UK",
-        "2": "Non UK"
+        "2": "Non UK",
+        "NaN": "NaN"
     },
     "health": {
         "1": "Very good health",
         "2": "Good health",
         "3": "Fair health",
         "4": "Bad health",
-        "5": "Very bad health"
+        "5": "Very bad health",
+        "NaN": "NaN"
     },
     "Ethnic_Group": {
         "1": "White",
@@ -54,7 +63,8 @@
         "3": "Asian",
         "4": "African",
         "5": "Caribbean or black",
-        "6": "Other ethnic group"
+        "6": "Other ethnic group",
+        "NaN": "NaN"
     },
     "religion": {
         "1": "No religion",
@@ -65,7 +75,8 @@
         "6": "Muslim",
         "7": "Sikh",
         "8": "Other religion",
-        "9": "Not stated"
+        "9": "Not stated",
+        "NaN": "NaN"
     },
     "Economic_Activity": {
         "1": "Economically active: Employed",
@@ -77,7 +88,8 @@
         "7": "Economically inactive: Looking after home or family",
         "8": "Economically inactive: Long-term sick or disabled",
         "9": "Economically inactive: Other",
-        "X": "No code required (Aged under 16)"
+        "X": "No code required (Aged under 16)",
+        "NaN": "NaN"
     },
     "Occupation": {
         "1": "Managers, Directors and Senior Officials",
@@ -89,7 +101,8 @@
         "7": "Sales and Customer Service Occupations",
         "8": "Process, Plant and Machine Operatives",
         "9": "Elementary Occupations",
-        "X": "No code required (People aged under 16 and people who have never worked)"
+        "X": "No code required (People aged under 16 and people who have never worked)",
+        "NaN": "NaN"
     },
     "industry": {
         "1": "Agriculture, forestry and fishing",
@@ -105,21 +118,24 @@
         "11": "Human health and social work activities",
         "12": "Arts; entertainment and recreation",
         "13": "Other",
-        "X": "No code required (People aged under 16 and people who have never worked)"
+        "X": "No code required (People aged under 16 and people who have never worked)",
+        "NaN": "NaN"
     },
     "Hours_Worked_Per_Week": {
         "1": "Part-time: 15 or less hours worked",
         "2": "Part-time: 16 to 30 hours worked",
         "3": "Full-time: 31 to 48 hours worked",
         "4": "Full-time 49 or more hours worked",
-        "X": "No code required (People aged under 16 and people not working)"
+        "X": "No code required (People aged under 16 and people not working)",
+        "NaN": "NaN"
     },
     "Approximate_Social_Grade": {
         "1": "AB",
         "2": "C1",
         "3": "C2",
         "4": "DE",
-        "X": "No code required ( People aged under 16 and people resident in communal establishments)"
+        "X": "No code required ( People aged under 16 and people resident in communal establishments)",
+        "NaN": "NaN"
     }
 
 }

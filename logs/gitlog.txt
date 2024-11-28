@@ -1,3 +1,4 @@
+* e5f1044 write mapping function
 * 7f3e0da finalize data_analysis.py
 * c8aef5d modify column names data_analysis.py
 * c67c77a add data_visualization.py module
