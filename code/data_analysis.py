@@ -2,17 +2,27 @@
 import pandas as pd
 import json as jn
 
-def map_data (data_to_map):
-    '''This function maps the numeric data in the csv file and gives the context provided in the json file'''
+def map_data (data_to_map, dict_name, map_file ='data/data_dictionary.json', place_holder = 'Unknown'):
+    '''This function recursively maps the numeric data in the csv file and gives the context provided in the json file'''
     # Load the structure from json file to map 
-    with open ('data/data_dictionary.json', 'r') as f:
-        map = jn.loads(f)
-    # apply the logic to map the context to each encoded number
-    for col, col_map in map.items():
-        # check if the column exist in the csv data's colum
-        if col in data_to_map.columns:
-            data_to_map[col] = data_to_map[col].map(col_map).fillna('Unknown')
-    return data_to_map
+    with open (map_file, 'r') as f:
+        map = jn.load(f)
+
+    # get the specific dictionary to map
+    target_dict = data_to_map.get(dict_name, {})
+
+    # perform the mapping
+    mapped_data = {}
+    if isinstance(target_dict,dict):
+        for key, value in target_dict.items():
+            if isinstance (value,dict):
+                mapped_data[key] = {map.get(str(k_inner),place_holder): v_inner for k_inner, v_inner in value.items()}
+            else:
+                mapped_data[map.get(str(key),place_holder)] = value
+        # update the original dictionary to the mapped dictionary
+        data_to_map[dict_name] = mapped_data
+        return data_to_map
+             
 
 def analyze_csv (csv_data):
     '''This function performs all the neccessary statistical analysis of the csv dataset and store them in a dictionary'''
@@ -55,6 +65,7 @@ def analyze_csv (csv_data):
     # Requirement 12: get the number of working hours per week for students
     student_codes = ['4', '6']  # full-time and part-time student codes
     results['working_hours_for_students'] = (data.loc[data['economic_activity'].isin(student_codes)].groupby('hours_worked_per_week').size().to_dict())
+    # print(f'one of the result dictionary! : {results["age_count"]}')
     print(results)
     return results
 
