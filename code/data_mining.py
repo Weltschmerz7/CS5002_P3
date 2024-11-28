@@ -69,5 +69,5 @@ def clean_data (csv = 'data/Scotland_teaching_file_1PCT.csv' ):
 
 # make the script executable 
 if __name__ == '__main__':
-        clean_data('./data/FAKE.CSV')
+        clean_data('./data/Scotland_teaching_file_1PCT.CSV')
 

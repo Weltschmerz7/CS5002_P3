@@ -2,26 +2,14 @@
 import pandas as pd
 import json as jn
 
-def map_data (data_to_map, dict_name, map_file ='data/data_dictionary.json', place_holder = 'Unknown'):
+def map_data (data_to_map, dict_name, map_file ='data/data_dictionary.json'):
     '''This function recursively maps the numeric data in the csv file and gives the context provided in the json file'''
     # Load the structure from json file to map 
     with open (map_file, 'r') as f:
         map = jn.load(f)
+    
 
-    # get the specific dictionary to map
-    target_dict = data_to_map.get(dict_name, {})
 
-    # perform the mapping
-    mapped_data = {}
-    if isinstance(target_dict,dict):
-        for key, value in target_dict.items():
-            if isinstance (value,dict):
-                mapped_data[key] = {map.get(str(k_inner),place_holder): v_inner for k_inner, v_inner in value.items()}
-            else:
-                mapped_data[map.get(str(key),place_holder)] = value
-        # update the original dictionary to the mapped dictionary
-        data_to_map[dict_name] = mapped_data
-        return data_to_map
              
 
 def analyze_csv (csv_data):
@@ -68,17 +56,17 @@ def analyze_csv (csv_data):
     # print(f'one of the result dictionary! : {results["age_count"]}')
     print(results)
 
-    result_types = {}
-    result_types["hours_worked_by_industry"] = ["Industry", "Hours_Worked"]
+    # result_types = {}
+    # result_types["hours_worked_by_industry"] = ["Industry", "Hours_Worked"]
     
-    for k in results["hours_worked_by_industry"]:
-        # result_types[0] = "Industry"
-        # json[result_types[0]] = json["Industry"] = industry_dict
-        # k[0] = 1
-        # k[1] = 12
-        # json["Industry"][k[0]] = "Agricuyklteer"... 
+    # for k in results["hours_worked_by_industry"]:
+    #     # result_types[0] = "Industry"
+    #     # json[result_types[0]] = json["Industry"] = industry_dict
+    #     # k[0] = 1
+    #     # k[1] = 12
+    #     # json["Industry"][k[0]] = "Agricuyklteer"... 
         
-        map[result_types[0]][k[0]]
+    #     map[result_types[0]][k[0]]
 
         
     

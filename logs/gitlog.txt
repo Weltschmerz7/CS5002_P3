@@ -1,3 +1,4 @@
+* e9835f3 modify json file
 * a5177e7 create space for invalid_data.csv
 * de60f7a finalize data_mining.py
 * e5f1044 write mapping function
