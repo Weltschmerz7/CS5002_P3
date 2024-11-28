@@ -1,3 +1,5 @@
+* a5177e7 create space for invalid_data.csv
+* de60f7a finalize data_mining.py
 * e5f1044 write mapping function
 * 7f3e0da finalize data_analysis.py
 * c8aef5d modify column names data_analysis.py

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3 
 import pandas as pd
 import json as jn
-import numpy as np
+
 
 # Pseudo code: This script should automate the data mining process with the following steps
 # check the format and validity of variable values
@@ -12,7 +12,6 @@ def clean_data (csv = 'data/Scotland_teaching_file_1PCT.csv' ):
     '''This function checks for consistency and clean the data'''
     # hardcode the file in because this is the assigned file to read
     data = pd.read_csv(csv, dtype=str)
-
     # load the json file
     with open('data/data_dictionary.json', 'r') as f:
         # the valid_rules is a dictionary of dictionaries. 
@@ -71,3 +70,4 @@ def clean_data (csv = 'data/Scotland_teaching_file_1PCT.csv' ):
 # make the script executable 
 if __name__ == '__main__':
         clean_data('./data/FAKE.CSV')
+
