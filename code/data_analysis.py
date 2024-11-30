@@ -1,7 +1,7 @@
 #!/usr/bin/env python3 
 import pandas as pd
 
-def analyze_csv (csv_data):
+def analyze_csv (csv_data = './data/cleaned_data.csv' ):
     '''This function performs all the neccessary statistical analysis of the csv dataset and store them in a dictionary'''
     # load the csv data
     with open(csv_data, 'r') as f:
@@ -56,4 +56,4 @@ def analyze_csv (csv_data):
     print(f'Data has been analyzed and a dictionary with \n {results.keys()} \n columns have been created ans stored! ')
     return results
 
-analyze_csv('data/cleaned_data.csv')
+analyze_csv()

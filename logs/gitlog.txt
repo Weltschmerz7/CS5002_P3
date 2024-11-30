@@ -1,3 +1,4 @@
+* 82bb810 add uneccessary files in .gitignore
 * e770948 add images for jupyter report
 * 76180fc edit jupyter notebook
 * fcd6b5a add the complied python file to gitignore
