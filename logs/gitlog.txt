@@ -1,3 +1,4 @@
+* 72d8016 map_data function complete, test with new json file
 * b042ff4 add backup json file before modifying the json file
 * 45c988b git commit -m add map_data function to map csv with json
 * d02b5c0 general update
