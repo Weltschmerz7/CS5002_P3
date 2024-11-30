@@ -52,8 +52,8 @@ def analyze_csv (csv_data):
     # Requirement 12: get the number of working hours per week for students
     student_codes = ['Economically active: Full-time student', 'Economically inactive: Student']  # full-time and part-time student codes
     results['working_hours_for_students'] = (data.loc[data['economic_activity'].isin(student_codes)].groupby('hours_worked_per_week').size().to_dict())
-    # print(f'one of the result dictionary! : {results["age_count"]}')
-    print(results)
+
+    print(f'Data has been analyzed and a dictionary with \n {results.keys()} \n columns have been created ans stored! ')
     return results
 
 analyze_csv('data/cleaned_data.csv')

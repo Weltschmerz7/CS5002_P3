@@ -76,7 +76,6 @@ def clean_data (csv = './data/Scotland_teaching_file_1PCT.CSV'):
         print('the raw data is clean and no further processing needed!')
 
     return mapped_data, invalid_rows
-
  
 clean_data()
 
