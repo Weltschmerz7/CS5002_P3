@@ -1,3 +1,4 @@
+* 5df1f0c finalize data_mining.py!
 * e9835f3 modify json file
 * a5177e7 create space for invalid_data.csv
 * de60f7a finalize data_mining.py

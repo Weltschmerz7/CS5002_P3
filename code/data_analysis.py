@@ -2,15 +2,6 @@
 import pandas as pd
 import json as jn
 
-def map_data (data_to_map, dict_name, map_file ='data/data_dictionary.json'):
-    '''This function recursively maps the numeric data in the csv file and gives the context provided in the json file'''
-    # Load the structure from json file to map 
-    with open (map_file, 'r') as f:
-        map = jn.load(f)
-    
-
-
-             
 
 def analyze_csv (csv_data):
     '''This function performs all the neccessary statistical analysis of the csv dataset and store them in a dictionary'''
@@ -55,21 +46,6 @@ def analyze_csv (csv_data):
     results['working_hours_for_students'] = (data.loc[data['economic_activity'].isin(student_codes)].groupby('hours_worked_per_week').size().to_dict())
     # print(f'one of the result dictionary! : {results["age_count"]}')
     print(results)
-
-    # result_types = {}
-    # result_types["hours_worked_by_industry"] = ["Industry", "Hours_Worked"]
-    
-    # for k in results["hours_worked_by_industry"]:
-    #     # result_types[0] = "Industry"
-    #     # json[result_types[0]] = json["Industry"] = industry_dict
-    #     # k[0] = 1
-    #     # k[1] = 12
-    #     # json["Industry"][k[0]] = "Agricuyklteer"... 
-        
-    #     map[result_types[0]][k[0]]
-
-        
-    
     return results
 
 # make the script executable 
