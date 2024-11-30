@@ -1,3 +1,4 @@
+* 05c2933 add dict_to_df function to transform dictionaries to df
 * f23264b write up report
 * f939cc3 general update
 * 14bcbfe modify notebook
