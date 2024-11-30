@@ -1,3 +1,5 @@
+* b042ff4 add backup json file before modifying the json file
+* 45c988b git commit -m add map_data function to map csv with json
 * d02b5c0 general update
 * ab7be1a delete map data function in data_analysis.py
 * 5df1f0c finalize data_mining.py!

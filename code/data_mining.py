@@ -2,16 +2,12 @@
 import pandas as pd
 import json as jn
 
-def map_data (csv_to_map, json_map,place_hold = 'Unknown'):
+def map_data (data_to_map, json_map):
     '''This helper function maps the coded csv to decoded csv using json file'''
-    # Prepare the csv and json file to map
-    data_to_map = pd.read_csv(csv_to_map)
-    with open (json_map,'r') as f:
-        decode_helper = jn.load(f)
-    
+    decode_helper = json_map
     for column in data_to_map.columns:
         if column in decode_helper:
-            data_to_map[column] = data_to_map[column].map(decode_helper[column]).fillna(place_hold)
+            data_to_map[column] = data_to_map[column].map(decode_helper[column])
     print(f'csv data with {len(data_to_map)} records decoded! ')
     return data_to_map
     
@@ -20,7 +16,7 @@ def map_data (csv_to_map, json_map,place_hold = 'Unknown'):
 # remove duplicates and deal with missing values
 # save the refined dataset as a seperate csv in data subdirectory for subsequent analysis
 
-def clean_data (csv = 'data/Scotland_teaching_file_1PCT.csv'):
+def clean_data (csv = './data/Scotland_teaching_file_1PCT.CSV'):
     '''This function checks for consistency and clean the data'''
     # hardcode the file in because this is the assigned file to read
     data = pd.read_csv(csv, dtype=str)
@@ -65,23 +61,22 @@ def clean_data (csv = 'data/Scotland_teaching_file_1PCT.csv'):
             # drop all the invalid columns
             data = data[~invalid_mask]
     # this is where i can call the function to map the csv, because at this point data is cleaned
+    # call the helper functin to map everything to the cleaned data
+    mapped_data = map_data(data,valid_rules)
 
-
-    print(data)
     # only create extra files if the data needs cleaning
     if len(invalid_rows) != 0 or len(duplicates) != 0 or nan_count > 0:
-        data.to_csv('data/cleaned_data.csv', index=False)
+        mapped_data.to_csv('data/cleaned_data.csv', index=False)
         invalid_rows.to_csv('data/invalid_data.csv', index=False)
         print(f'Data cleaned, stored {len(invalid_rows)} records of invalid data in a seperate csv file. Cleaned data is ready to be processed!')
-    elif original_columns != list(data.columns):
-        data.to_csv('data/cleaned_data.csv', index=False)
+    elif original_columns != list(mapped_data.columns):
+        mapped_data.to_csv('data/cleaned_data.csv', index=False)
         print('Data columns have been cleaned and new csv file is saved in the data directory!')
     else:
         print('the raw data is clean and no further processing needed!')
 
-    return data, invalid_rows
+    return mapped_data, invalid_rows
 
-# make the script executable 
-if __name__ == '__main__':
-        clean_data('./data/Scotland_teaching_file_1PCT.CSV')
+ 
+clean_data()
 
