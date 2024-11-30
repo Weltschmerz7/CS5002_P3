@@ -1,3 +1,4 @@
+* f23264b write up report
 * f939cc3 general update
 * 14bcbfe modify notebook
 * 82bb810 add uneccessary files in .gitignore
