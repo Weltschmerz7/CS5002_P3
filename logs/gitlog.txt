@@ -1,3 +1,4 @@
+* d02b5c0 general update
 * ab7be1a delete map data function in data_analysis.py
 * 5df1f0c finalize data_mining.py!
 * e9835f3 modify json file

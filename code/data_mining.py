@@ -2,13 +2,25 @@
 import pandas as pd
 import json as jn
 
-
+def map_data (csv_to_map, json_map,place_hold = 'Unknown'):
+    '''This helper function maps the coded csv to decoded csv using json file'''
+    # Prepare the csv and json file to map
+    data_to_map = pd.read_csv(csv_to_map)
+    with open (json_map,'r') as f:
+        decode_helper = jn.load(f)
+    
+    for column in data_to_map.columns:
+        if column in decode_helper:
+            data_to_map[column] = data_to_map[column].map(decode_helper[column]).fillna(place_hold)
+    print(f'csv data with {len(data_to_map)} records decoded! ')
+    return data_to_map
+    
 # Pseudo code: This script should automate the data mining process with the following steps
 # check the format and validity of variable values
 # remove duplicates and deal with missing values
 # save the refined dataset as a seperate csv in data subdirectory for subsequent analysis
 
-def clean_data (csv = 'data/Scotland_teaching_file_1PCT.csv' ):
+def clean_data (csv = 'data/Scotland_teaching_file_1PCT.csv'):
     '''This function checks for consistency and clean the data'''
     # hardcode the file in because this is the assigned file to read
     data = pd.read_csv(csv, dtype=str)
@@ -52,6 +64,8 @@ def clean_data (csv = 'data/Scotland_teaching_file_1PCT.csv' ):
             invalid_rows = pd.concat([invalid_rows, invalid_row], ignore_index=True)
             # drop all the invalid columns
             data = data[~invalid_mask]
+    # this is where i can call the function to map the csv, because at this point data is cleaned
+
 
     print(data)
     # only create extra files if the data needs cleaning

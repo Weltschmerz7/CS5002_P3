@@ -1,7 +1,5 @@
 #!/usr/bin/env python3 
 import pandas as pd
-import json as jn
-
 
 def analyze_csv (csv_data):
     '''This function performs all the neccessary statistical analysis of the csv dataset and store them in a dictionary'''
@@ -48,6 +46,4 @@ def analyze_csv (csv_data):
     print(results)
     return results
 
-# make the script executable 
-if __name__ == '__main__':
-        analyze_csv('data/cleaned_data.csv')
+analyze_csv('data/cleaned_data.csv')
