@@ -1,3 +1,5 @@
+* a9c1733 add image
+* 930e61a prepare data_visualization for the ipywidgets
 * 5076dba add the actual notebook html
 * 8fb67d7 finalize ipynb_to_html.py
 * 1a3a452 add the html
