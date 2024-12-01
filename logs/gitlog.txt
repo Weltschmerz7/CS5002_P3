@@ -1,3 +1,5 @@
+* 631570c add the script to transform jupyter notebook to html format
+* 48876fc update requirements.txt
 * 405fe51 finalize data_visualization
 * 19e0ace finalize data_visualization
 * 98cf990 add get_pie function
