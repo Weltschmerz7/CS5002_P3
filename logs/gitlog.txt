@@ -1,3 +1,4 @@
+* 41a333e edit interactive_charts
 * 271f90d add interactive_chart.py
 * 3e83ae4 finalize data visualization.py
 * 5e007b5 finalize data_visualization.py
