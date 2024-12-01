@@ -50,29 +50,59 @@ def get_pie (df_to_plot, labels_col, values_col, title = 'Pie chart'):
     '''This function takes in the data to plot, and make the pie chart'''
     plt.figure(figsize=(10, 8)) # Adjust figure size
 
-    # Create the pie chart without labels or percentages
-    wedges = plt.pie(
+    # Create the pie chart (only wedges and labels are returned)
+    wedges, texts = plt.pie(
         df_to_plot[values_col],
-        startangle=90,               
-        colors=plt.cm.Set3.colors, 
+        startangle=90,
+        colors=plt.cm.Set3.colors,
     )
-    # Build custom legend labels with percentages
+
+    # Get the legend labels with percentages
     legend_labels = [
         f"{category} ({percentage:.1f}%)"
         for category, percentage in zip(df_to_plot[labels_col], df_to_plot[values_col])
     ]
-    # Add a legend with the custom labels
+
+    # Add a legend with percentages
     plt.legend(
-        wedges,
-        # Labels with percentages                      
-        legend_labels, 
-        title="Categories",          
-        loc="center left",           
-        bbox_to_anchor=(1, 0, 0.5, 1),  
-        fontsize=12                  
+        wedges,                      # Wedges (colors)
+        legend_labels,               # Labels with percentages
+        title="Categories",          # Title of the legend
+        loc="center left",           # Position legend
+        bbox_to_anchor=(1, 0, 0.5, 1),  # Place legend outside the chart
+        fontsize=12                  # Font size for legend labels
     )
-    plt.title(title, fontsize=16) 
+
+    # Add the title
+    plt.title(title, fontsize=16)
+
     # Adjust layout to fit everything
-    plt.tight_layout()  
+    plt.tight_layout()
     plt.show()
+
+    # # Create the pie chart without labels or percentages
+    # wedges, _ , _ = plt.pie(
+    #     df_to_plot[values_col],
+    #     startangle=90,               
+    #     colors=plt.cm.Set3.colors, 
+    # )
+    # # Get the legend labels with percentages
+    # legend_labels = [
+    #     f"{category} ({percentage:.1f}%)"
+    #     for category, percentage in zip(df_to_plot[labels_col], df_to_plot[values_col])
+    # ]
+    # # Add a legend with percentages
+    # plt.legend(
+    #     wedges,
+    #     # Labels with percentages                      
+    #     legend_labels, 
+    #     title="Categories",          
+    #     loc="center left",           
+    #     bbox_to_anchor=(1, 0, 0.5, 1),  
+    #     fontsize=12                  
+    # )
+    # plt.title(title, fontsize=16) 
+    # # Adjust layout to fit everything
+    # plt.tight_layout()  
+    # plt.show()
 
