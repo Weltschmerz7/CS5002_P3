@@ -1,3 +1,4 @@
+* a94e090 update ipynb_to_html.py
 * 631570c add the script to transform jupyter notebook to html format
 * 48876fc update requirements.txt
 * 405fe51 finalize data_visualization

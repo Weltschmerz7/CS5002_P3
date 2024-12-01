@@ -1,5 +1,6 @@
-import pandas as pd
 import matplotlib.pyplot as plt;
+import pandas as pd
+
 
 
 def dict_to_df (dict_to_trans, col_names = None):
