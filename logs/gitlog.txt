@@ -1,3 +1,4 @@
+* f5a9b69 edit the readme.md file
 * e608780 update the .gitignore
 * 054b040 general update
 * 7c7b03f modify notebooks
