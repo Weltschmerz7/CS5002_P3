@@ -80,29 +80,5 @@ def get_pie (df_to_plot, labels_col, values_col, title = 'Pie chart'):
     plt.tight_layout()
     plt.show()
 
-    # # Create the pie chart without labels or percentages
-    # wedges, _ , _ = plt.pie(
-    #     df_to_plot[values_col],
-    #     startangle=90,               
-    #     colors=plt.cm.Set3.colors, 
-    # )
-    # # Get the legend labels with percentages
-    # legend_labels = [
-    #     f"{category} ({percentage:.1f}%)"
-    #     for category, percentage in zip(df_to_plot[labels_col], df_to_plot[values_col])
-    # ]
-    # # Add a legend with percentages
-    # plt.legend(
-    #     wedges,
-    #     # Labels with percentages                      
-    #     legend_labels, 
-    #     title="Categories",          
-    #     loc="center left",           
-    #     bbox_to_anchor=(1, 0, 0.5, 1),  
-    #     fontsize=12                  
-    # )
-    # plt.title(title, fontsize=16) 
-    # # Adjust layout to fit everything
-    # plt.tight_layout()  
-    # plt.show()
+
 

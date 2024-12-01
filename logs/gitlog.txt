@@ -1,3 +1,4 @@
+* 405fe51 finalize data_visualization
 * 19e0ace finalize data_visualization
 * 98cf990 add get_pie function
 * f7f6d7b update notebook and adding the get_bar function
