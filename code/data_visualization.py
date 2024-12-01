@@ -48,31 +48,31 @@ def get_bar (data_to_plot, x_col, y_col, title = 'Bar chart', xlabel = 'X-axis',
 
 def get_pie (df_to_plot, labels_col, values_col, title = 'Pie chart'):
     '''This function takes in the data to plot, and make the pie chart'''
-    plt.figure(figsize=(10, 8))  # Adjust figure size
+    plt.figure(figsize=(10, 8)) # Adjust figure size
 
-    # Create the pie chart without labels
-    wedges, texts, autotexts = plt.pie(
+    # Create the pie chart without labels or percentages
+    wedges = plt.pie(
         df_to_plot[values_col],
-        autopct='%1.1f%%',           # Show percentage on the chart
-        startangle=90,               # Start from the top
-        colors=plt.cm.Set3.colors,  # Use a distinct color palette
-        textprops={'fontsize': 12},  # Adjust percentage font size
-        labeldistance = 1.1,
-        pctdistance = 0.85
+        startangle=90,               
+        colors=plt.cm.Set3.colors, 
     )
-
-    # Add a legend next to the chart
+    # Build custom legend labels with percentages
+    legend_labels = [
+        f"{category} ({percentage:.1f}%)"
+        for category, percentage in zip(df_to_plot[labels_col], df_to_plot[values_col])
+    ]
+    # Add a legend with the custom labels
     plt.legend(
-        wedges,                      # Corresponding wedges (colors)
-        df_to_plot[labels_col],            # Labels from the data
-        title="Categories",          # Title of the legend
-        loc="center left",           # Position it to the left of the chart
-        bbox_to_anchor=(1, 0, 0.5, 1),  # Anchor the legend outside the chart
-        fontsize=12                  # Legend font size
+        wedges,
+        # Labels with percentages                      
+        legend_labels, 
+        title="Categories",          
+        loc="center left",           
+        bbox_to_anchor=(1, 0, 0.5, 1),  
+        fontsize=12                  
     )
-
-    plt.title(title, fontsize=16)  # Chart title
-    plt.tight_layout()  # Adjust layout to fit everything
+    plt.title(title, fontsize=16) 
+    # Adjust layout to fit everything
+    plt.tight_layout()  
     plt.show()
-    
-    return plt
+
