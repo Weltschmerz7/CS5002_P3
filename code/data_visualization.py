@@ -1,7 +1,5 @@
 import matplotlib.pyplot as plt;
 import pandas as pd
-import ipywidgets as widgets
-from ipywidgets import interact
 
 
 def dict_to_df (dict_to_trans, col_names = None):
@@ -33,20 +31,6 @@ def dict_to_df (dict_to_trans, col_names = None):
         df.reset_index(inplace=True)
         df.columns = col_names
         return df
-    
-# def get_bar (data_to_plot, x_col, y_col, title = 'Bar chart', xlabel = 'X-axis', ylabel = 'Y-axis'):
-#     '''This function takes in the data to plot, and make the bar chart '''
-    
-#     plt.figure(figsize=(12, 8))
-
-#     plt.barh(data_to_plot[x_col], data_to_plot[y_col], color='skyblue')
-#     plt.xlabel(xlabel)
-#     plt.ylabel(ylabel)
-#     # plt.xticks(rotation=60)
-#     plt.title(title)
-#     plt.tight_layout()
-#     plt.show()
-#     return plt
 
 def get_bar (data_to_plot, x_col, y_col, title = 'Bar chart', xlabel = 'X-axis', ylabel = 'Y-axis'):
     '''This function takes in the data to plot, and make the bar chart '''

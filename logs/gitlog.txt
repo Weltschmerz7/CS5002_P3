@@ -1,3 +1,4 @@
+* 5e007b5 finalize data_visualization.py
 * a738043 write up jupyter report
 * a9c1733 add image
 * 930e61a prepare data_visualization for the ipywidgets
