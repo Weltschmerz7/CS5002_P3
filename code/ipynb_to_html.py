@@ -10,5 +10,5 @@ def convert_to_html (notebook, template = 'classic'):
     print(f'html version of the notebook have been created {html_report}')
     return html_report
 
-convert_to_html('./notebooks/CS5002_P3_200013825 copy.ipynb')
+convert_to_html('./notebooks/CS5002_P3_200013825.ipynb')
 

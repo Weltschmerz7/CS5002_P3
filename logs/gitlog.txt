@@ -1,3 +1,5 @@
+* 1a3a452 add the html
+* eda36cc modify readme.md
 * 09fe2d9 allow embed images in ipynb_to_html script
 * a94e090 update ipynb_to_html.py
 * 631570c add the script to transform jupyter notebook to html format
