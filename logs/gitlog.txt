@@ -1,3 +1,4 @@
+* 0f42b8c general update
 * 915a370 update jupyter notebook
 * 41a333e edit interactive_charts
 * 271f90d add interactive_chart.py
