@@ -6,7 +6,7 @@ To activate an virtual environment: source venv/bin/activate
 
 Download all required packages: pip install -r requirements.txt
 
-To add the git log into gitlog.txt: it has been configured in the .git/hooks/post-commit*, so gitlog is updated each time `git commit` is used.
+To check gitlog.txt: it has been configured in the .git/hooks/post-commit*, so gitlog is updated each time `git commit` is used.
 
 This is the procedure to edit post-commit file in .git/hooks to automatically update the gitlog.txt after each commit:
 1. go to hidden directory .git/hooks
@@ -18,11 +18,15 @@ To clear the gitlog.txt: **> gitlog.txt** to overwrite the file with nothing
 
 I have set up `.gitignore` to let git ignore certain unecessary files when pushing the files up 
 
+Set up executable scripts using chmod +x <file_path> for `data_mining.py` and `ipynb_to_html.py` 
+
 First run the **data_mining.py** in the terminal to clean the data and verify that the data is of correct format. Run it using `'./code/data_mining.py'`
 if the data is inconsistent, a new csv file will be saved under 'data' folder
 if the data is consistent, no new csv will be made and a message will be printed in terminal. All columns' names will be put into lower case and striped off white space
 
 After running the data_mining.py, go to the jupyter notebook and run to see the analyzed results and plotted graphs and charts.
+
+To create the **html format** of the .ipynb notebook, run the script `./code/ipynb_to_html.py`
 
 
 
