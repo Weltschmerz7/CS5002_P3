@@ -65,4 +65,4 @@ def get_widge(data_to_plot, x_col = 'x_col', y_col = 'y_col',char_type = 'bar'):
     )
 
     # Call the plotting function with the filtered data
-    interactive_plot(data_to_plot,x_col, y_col,char_type='bar')
+    interactive_plot(data_to_plot,x_col, y_col)
