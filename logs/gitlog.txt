@@ -1,3 +1,4 @@
+* 7c7b03f modify notebooks
 * cd80b94 general update
 * 05c2933 add dict_to_df function to transform dictionaries to df
 * f23264b write up report
