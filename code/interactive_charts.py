@@ -50,12 +50,13 @@ def get_widge(data_to_plot, x_col = 'x_col', y_col = 'y_col',char_type = 'bar'):
     filter_column_dropdown.observe(update_filter_values, names='value')
 
     # Function to filter data and update the plot
-    def update_plot(filter_column, filter_value):
+    def update_plot(chart_type,filter_column, filter_value):
         # Apply filtering if both column and value are selected
         data = data_to_plot.copy()
         if filter_column and filter_value:
             data = data[data[filter_column] == filter_value]
 
+    
     # Interactive widget setup
     interact(
         update_plot,
@@ -65,4 +66,4 @@ def get_widge(data_to_plot, x_col = 'x_col', y_col = 'y_col',char_type = 'bar'):
     )
 
     # Call the plotting function with the filtered data
-    interactive_plot(data_to_plot,x_col, y_col)
+    interactive_plot(data_to_plot=data_to_plot,x_col=x_col, y_col=y_col,char_type=char_type)
