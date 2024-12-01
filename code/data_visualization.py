@@ -37,15 +37,42 @@ def get_bar (data_to_plot, x_col, y_col, title = 'Bar chart', xlabel = 'X-axis',
     
     plt.figure(figsize=(12, 8))
 
-    plt.bar(data_to_plot[x_col], data_to_plot[y_col], color='skyblue')
+    plt.barh(data_to_plot[x_col], data_to_plot[y_col], color='skyblue')
     plt.xlabel(xlabel)
     plt.ylabel(ylabel)
-    plt.xticks(rotation=60)
+    # plt.xticks(rotation=60)
     plt.title(title)
     plt.tight_layout()
     plt.show()
     return plt
 
-# def get_pie (data_to_plot):
-#     '''This function takes in the data to plot, and make the pie chart'''
+def get_pie (df_to_plot, labels_col, values_col, title = 'Pie chart'):
+    '''This function takes in the data to plot, and make the pie chart'''
+    plt.figure(figsize=(10, 8))  # Adjust figure size
 
+    # Create the pie chart without labels
+    wedges, texts, autotexts = plt.pie(
+        df_to_plot[values_col],
+        autopct='%1.1f%%',           # Show percentage on the chart
+        startangle=90,               # Start from the top
+        colors=plt.cm.Set3.colors,  # Use a distinct color palette
+        textprops={'fontsize': 12},  # Adjust percentage font size
+        labeldistance = 1.1,
+        pctdistance = 0.85
+    )
+
+    # Add a legend next to the chart
+    plt.legend(
+        wedges,                      # Corresponding wedges (colors)
+        df_to_plot[labels_col],            # Labels from the data
+        title="Categories",          # Title of the legend
+        loc="center left",           # Position it to the left of the chart
+        bbox_to_anchor=(1, 0, 0.5, 1),  # Anchor the legend outside the chart
+        fontsize=12                  # Legend font size
+    )
+
+    plt.title(title, fontsize=16)  # Chart title
+    plt.tight_layout()  # Adjust layout to fit everything
+    plt.show()
+    
+    return plt

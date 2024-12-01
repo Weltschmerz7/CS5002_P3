@@ -1,3 +1,4 @@
+* f7f6d7b update notebook and adding the get_bar function
 * 4f37a93 refine the notebook
 * f5a9b69 edit the readme.md file
 * e608780 update the .gitignore
