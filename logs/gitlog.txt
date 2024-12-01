@@ -1,3 +1,5 @@
+* 5076dba add the actual notebook html
+* 8fb67d7 finalize ipynb_to_html.py
 * 1a3a452 add the html
 * eda36cc modify readme.md
 * 09fe2d9 allow embed images in ipynb_to_html script

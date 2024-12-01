@@ -68,10 +68,10 @@ def get_pie (df_to_plot, labels_col, values_col, title = 'Pie chart'):
     plt.legend(
         wedges,                      # Wedges (colors)
         legend_labels,               # Labels with percentages
-        title="Categories",          # Title of the legend
-        loc="center left",           # Position legend
+        title="Categories",          
+        loc="center left",           
         bbox_to_anchor=(1, 0, 0.5, 1),  # Place legend outside the chart
-        fontsize=12                  # Font size for legend labels
+        fontsize=12                  
     )
 
     # Add the title
