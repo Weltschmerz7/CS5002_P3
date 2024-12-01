@@ -1,3 +1,4 @@
+* e608780 update the .gitignore
 * 054b040 general update
 * 7c7b03f modify notebooks
 * cd80b94 general update
